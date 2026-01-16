@@ -8,7 +8,7 @@ import {
   createAppointmentHandler,
   updateAppointmentHandler,
   deleteAppointmentHandler,
-  getAppointmentsByIdHandler,
+  getAppointmentByIdHandler,
 } from './handlers';
 import {
   AppointmentSchema,
@@ -17,7 +17,7 @@ import {
 
 export async function appointmentsRoutes(
   fastify: FastifyInstance,
-  options: FastifyPluginOptions,
+  _options: FastifyPluginOptions,
 ) {
   const provider = await getProviderFromDb();
   const client = getProviderClient(provider);
@@ -27,7 +27,7 @@ export async function appointmentsRoutes(
   });
 
   fastify.get('/:appointmentId', {
-    handler: getAppointmentsByIdHandler(client),
+    handler: getAppointmentByIdHandler(client),
   });
 
   fastify.post('/', {

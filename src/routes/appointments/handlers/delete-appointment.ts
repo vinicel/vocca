@@ -1,18 +1,14 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { ProviderClientInterface } from '../../../providers/provider-client.interface';
+import { IProviderClient } from '../../../providers/provider-client.interface';
 import {
   AppointmentIdParams,
+  DeleteAppointmentResponse,
   successResponse,
   ApiSuccessResponse,
 } from '../../../domain/schemas';
 import { parseProviderError } from '../../../errors';
 
-interface DeleteAppointmentResponse {
-  appointmentId: string;
-  deleted: true;
-}
-
-export function deleteAppointmentHandler(client: ProviderClientInterface) {
+export function deleteAppointmentHandler(client: IProviderClient) {
   return async (
     request: FastifyRequest<{ Params: AppointmentIdParams }>,
     reply: FastifyReply,

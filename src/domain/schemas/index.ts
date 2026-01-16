@@ -8,10 +8,12 @@ export {
   UpdateAppointmentInputSchema,
   GetAppointmentsQuerySchema,
   AppointmentIdParamsSchema,
+  DeleteAppointmentResponseSchema,
   type Appointment,
   type UpdateAppointmentInput,
   type GetAppointmentsQuery,
   type AppointmentIdParams,
+  type DeleteAppointmentResponse,
 } from './appointment.schema';
 
 export {

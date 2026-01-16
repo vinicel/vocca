@@ -1,4 +1,4 @@
-import { ProviderClientInterface } from '../../../providers/provider-client.interface';
+import { IProviderClient } from '../../../providers/provider-client.interface';
 import { successResponse, ApiSuccessResponse } from '../../../domain/schemas';
 import { NotSupportedError, parseProviderError } from '../../../errors';
 
@@ -6,7 +6,7 @@ interface Hl7SampleResponse {
   sample: string;
 }
 
-export function getHl7SampleHandler(client: ProviderClientInterface) {
+export function getHl7SampleHandler(client: IProviderClient) {
   return async (): Promise<ApiSuccessResponse<Hl7SampleResponse>> => {
     try {
       if (!client.getHl7Sample) {

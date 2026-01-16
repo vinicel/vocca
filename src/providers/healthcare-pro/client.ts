@@ -21,16 +21,15 @@ import {
   HealthcareProConfig,
 } from './types';
 import {
-  ProviderClientInterface,
+  IProviderClient,
   HealthResponse,
 } from '../provider-client.interface';
 import { request, requestText } from './request';
 
 export function buildHealthcareProClient(
   config: HealthcareProConfig,
-): ProviderClientInterface {
+): IProviderClient {
   const { timeout = 10000 } = config;
-  const baseUrl = 'https://healthcare-pro-api.onrender.com';
 
   async function health(): Promise<HealthResponse> {
     return request<HealthResponse>(timeout, '/health');

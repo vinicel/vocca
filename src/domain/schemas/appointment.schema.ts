@@ -29,9 +29,17 @@ export const AppointmentIdParamsSchema = z.object({
   appointmentId: z.string(),
 });
 
+export const DeleteAppointmentResponseSchema = z.object({
+  appointmentId: z.string(),
+  deleted: z.literal(true),
+});
+
 export type Appointment = z.infer<typeof AppointmentSchema>;
 export type UpdateAppointmentInput = z.infer<
   typeof UpdateAppointmentInputSchema
 >;
 export type GetAppointmentsQuery = z.infer<typeof GetAppointmentsQuerySchema>;
 export type AppointmentIdParams = z.infer<typeof AppointmentIdParamsSchema>;
+export type DeleteAppointmentResponse = z.infer<
+  typeof DeleteAppointmentResponseSchema
+>;
