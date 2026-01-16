@@ -1,5 +1,5 @@
 import { FastifyRequest } from 'fastify';
-import { ProviderClientInterface } from '../../../providers/provider-client.interface';
+import { IProviderClient } from '../../../providers/provider-client.interface';
 import {
   Availability,
   GetAvailabilitiesQuery,
@@ -8,7 +8,7 @@ import {
 } from '../../../domain/schemas';
 import { parseProviderError } from '../../../errors';
 
-export function getAvailabilitiesHandler(client: ProviderClientInterface) {
+export function getAvailabilitiesHandler(client: IProviderClient) {
   return async (
     request: FastifyRequest<{ Querystring: GetAvailabilitiesQuery }>,
   ): Promise<ApiListResponse<Availability>> => {

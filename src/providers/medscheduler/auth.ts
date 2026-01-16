@@ -5,8 +5,8 @@ export function generateHmacSignature(
   method: string,
   body?: string,
 ): Record<string, string> {
-  const apiSecret = process.env.MEDSCHEDULER_PRO_X_API_KEY || '';
-  const clientId = process.env.MEDSCHEDULER_PRO_X_CLIENT_ID || '';
+  const apiSecret = process.env.MEDSCHEDULER_API_KEY || '';
+  const clientId = process.env.MEDSCHEDULER_CLIENT_ID || '';
   const bodyString = body || '';
   const timestamp = Math.floor(Date.now() / 1000).toString();
 

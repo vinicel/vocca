@@ -1,5 +1,5 @@
 import { FastifyRequest } from 'fastify';
-import { ProviderClientInterface } from '../../../providers/provider-client.interface';
+import { IProviderClient } from '../../../providers/provider-client.interface';
 import { successResponse, ApiSuccessResponse } from '../../../domain/schemas';
 import { NotSupportedError, parseProviderError } from '../../../errors';
 
@@ -7,7 +7,7 @@ interface Hl7AdtResponse {
   ack: string;
 }
 
-export function sendHl7AdtHandler(client: ProviderClientInterface) {
+export function sendHl7AdtHandler(client: IProviderClient) {
   return async (
     request: FastifyRequest<{ Body: string }>,
   ): Promise<ApiSuccessResponse<Hl7AdtResponse>> => {

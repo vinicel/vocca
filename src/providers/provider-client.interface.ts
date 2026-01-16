@@ -10,7 +10,7 @@ export interface HealthResponse {
   version: string;
 }
 
-export interface ProviderClientInterface {
+export interface IProviderClient {
   health(): Promise<HealthResponse>;
   getPatients(search?: string, active?: boolean): Promise<Patient[]>;
   createPatient(patient: Patient): Promise<Patient>;

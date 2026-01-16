@@ -5,7 +5,7 @@ import {
   UpdateAppointmentInput,
 } from '../../domain/schemas';
 import {
-  ProviderClientInterface,
+  IProviderClient,
   HealthResponse,
 } from '../provider-client.interface';
 import {
@@ -26,7 +26,7 @@ import { request } from './request';
 
 export function buildMedSchedulerClient(
   config: MedSchedulerConfig,
-): ProviderClientInterface {
+): IProviderClient {
   const { timeout = 10000 } = config;
 
   async function health(): Promise<HealthResponse> {

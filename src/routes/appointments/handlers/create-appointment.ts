@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { ProviderClientInterface } from '../../../providers/provider-client.interface';
+import { IProviderClient } from '../../../providers/provider-client.interface';
 import {
   Appointment,
   successResponse,
@@ -7,7 +7,7 @@ import {
 } from '../../../domain/schemas';
 import { parseProviderError } from '../../../errors';
 
-export function createAppointmentHandler(client: ProviderClientInterface) {
+export function createAppointmentHandler(client: IProviderClient) {
   return async (
     request: FastifyRequest<{ Body: Appointment }>,
     reply: FastifyReply,
