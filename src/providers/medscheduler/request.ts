@@ -1,5 +1,5 @@
 import { generateHmacSignature } from './auth';
-import {httpRequest} from "../shared/http-client";
+import { httpRequest } from '../shared/http-client';
 
 const BASE_URL = 'https://medscheduler-api.onrender.com';
 

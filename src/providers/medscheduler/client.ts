@@ -4,10 +4,7 @@ import {
   Appointment,
   UpdateAppointmentInput,
 } from '../../domain/schemas';
-import {
-  IProviderClient,
-  HealthResponse,
-} from '../provider-client.interface';
+import { IProviderClient, HealthResponse } from '../provider-client.interface';
 import {
   reshapePatientToProviderFormat,
   reshapeCreatedPatientFromProviderFormat,

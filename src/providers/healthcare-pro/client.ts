@@ -20,10 +20,7 @@ import {
   HealthcareProAppointmentResponse,
   HealthcareProConfig,
 } from './types';
-import {
-  IProviderClient,
-  HealthResponse,
-} from '../provider-client.interface';
+import { IProviderClient, HealthResponse } from '../provider-client.interface';
 import { request, requestText } from './request';
 
 export function buildHealthcareProClient(

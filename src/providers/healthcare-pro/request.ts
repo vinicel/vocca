@@ -1,5 +1,5 @@
 import { getAccessToken } from './auth';
-import {httpRequest, httpRequestText} from "../shared/http-client";
+import { httpRequest, httpRequestText } from '../shared/http-client';
 
 const BASE_URL = 'https://healthcare-pro-api.onrender.com';
 
