@@ -1,0 +1,22 @@
+import { FastifyReply, FastifyRequest } from 'fastify';
+import { ProviderClientInterface } from '../../../providers/provider-client.interface';
+import {
+  Patient,
+  successResponse,
+  ApiSuccessResponse,
+} from '../../../domain/schemas';
+import { parseProviderError } from '../../../errors';
+
+export function createPatientHandler(client: ProviderClientInterface) {
+  return async (
+    request: FastifyRequest<{ Body: Patient }>,
+    reply: FastifyReply,
+  ): Promise<ApiSuccessResponse<Patient>> => {
+    try {
+      const patient = await client.createPatient(request.body);
+      return reply.status(201).send(successResponse(patient));
+    } catch (error) {
+      throw parseProviderError(error);
+    }
+  };
+}
