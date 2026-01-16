@@ -8,7 +8,7 @@ const DEFAULT_TIMEOUT = 10000;
 
 const clients: Record<ProviderType, IProviderClient> = {
   'healthcare-pro': buildHealthcareProClient({ timeout: DEFAULT_TIMEOUT }),
-  medscheduler: buildMedSchedulerClient({ timeout: DEFAULT_TIMEOUT }),
+  'medscheduler': buildMedSchedulerClient({ timeout: DEFAULT_TIMEOUT }),
 };
 
 export function getProviderClient(provider: ProviderType): IProviderClient {
@@ -21,5 +21,5 @@ export function getProviderClient(provider: ProviderType): IProviderClient {
 
 export async function getProviderFromDb(): Promise<ProviderType> {
   // TODO: Fetch from database
-  return 'medscheduler';
+  return 'healthcare-pro';
 }
